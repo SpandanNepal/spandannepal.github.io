@@ -1,7 +1,14 @@
 /*general*/
-body{
-	background: rgb(64, 55, 88);
-}
+html { 
+	min-height: 100%;
+	background-image: url(../bg_img.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+  }
+/*body{
+	background: rgb(21, 217, 252);
+}*/
 article, aside, figure, footer, header, main, menu, nav, section {
 	display: block;
 }
@@ -14,6 +21,12 @@ header {
 }
 h1, main {
 	text-align: center;
+}
+h1{
+	text-align: center;
+	font-size: 42px;
+	color: Black;
+	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 table {
 	border-collapse: collapse;

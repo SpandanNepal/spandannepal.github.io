@@ -1,1 +1,1 @@
-spandannepal.github.io.git
+https://spandannepal.github.io/
