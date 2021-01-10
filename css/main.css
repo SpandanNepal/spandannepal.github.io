@@ -1,7 +1,7 @@
 /*general*/
 html { 
 	min-height: 100%;
-	background-image: url(../images/bg_img.jpg);
+	background-image: linear-gradient(to top right, #2193b0, #6dd5ed);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -32,9 +32,26 @@ table {
 	border-collapse: collapse;
 	display: inline-block;
 	text-align: left;
-	border-top: 1px solid #888;
+	border-top: 1px solid #000000;
 }
-table thead {
+th{
+	font-size: 21px;
+	color: rgb(41, 38, 38);
+}
+td{
+	font-size: 18px;
+}
+td a{
+	color: black;
+	font-size: 16px;
+}
+td a:hover{
+	color: white;
+}
+t-body{
+	text-align: center;
+}
+/*table thead {
 	background: #bbb;
 }
 table tr th {
@@ -45,7 +62,7 @@ table tr{
 }
 table tr:nth-child(even) {
 	background: #dfdfdf;
-}
+}*/
 table th, table td {
 	padding: 10px 20px;
 	border: 1px solid rgb(7, 7, 7);
@@ -58,7 +75,6 @@ table th, table td {
 	 */
 	table td {
 		display: block;
-		text-align: right;
 	}
 	/*put data-label content before each field floated to the left*/
 	table td:before {
