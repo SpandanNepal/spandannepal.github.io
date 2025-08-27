@@ -1,85 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spandan Nepal – Resume</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;       /* slate-900 */
+      --muted: #475569;    /* slate-600 */
+      --accent: #0ea5e9;   /* sky-500 */
+      --line: #e2e8f0;     /* slate-200 */
+      --chip: #f1f5f9;     /* slate-100 */
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.5;
+      color: var(--fg);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .resume {
+      max-width: 950px;
+      margin: 48px auto;
+      padding: 40px 48px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    h1 { font-size: 2rem; margin: 0; letter-spacing: 0.2px; }
+    .role { color: var(--muted); font-weight: 600; margin-top: 2px; }
+
+    .contact {
+      display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 6px;
+      color: var(--muted);
+    }
+    .contact a { color: var(--accent); text-decoration: none; }
+    .contact a:focus, .contact a:hover { text-decoration: underline; }
+
+    h2 { font-size: 1.1rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 28px 0 12px; }
+    section + section { margin-top: 12px; }
+
+    p { margin: 0 0 10px 0; }
+
+    ul { margin: 8px 0 0 0; padding-left: 20px; }
+    li { margin: 6px 0; }
+
+    /* Layout helpers */
+    .grid-2 {
+      display: grid; gap: 12px 24px; grid-template-columns: 1fr 1fr;
+    }
+    .grid-3 {
+      display: grid; gap: 10px 16px; grid-template-columns: repeat(3, 1fr);
+    }
+
+    .item {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .subtle { color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip { background: var(--chip); border: 1px solid var(--line); padding: 5px 10px; border-radius: 999px; font-size: 0.92rem; }
+
+    .row { display: flex; justify-content: space-between; gap: 16px; }
+    .row .left { font-weight: 700; }
+    .row .right { color: var(--muted); white-space: nowrap; }
+
+    .block { margin-top: 10px; }
+
+    /* Print styles */
+    @media print {
+      body { background: #fff; }
+      .resume { box-shadow: none; border: 0; margin: 0; padding: 0; max-width: 100%; }
+      a { color: #000; text-decoration: underline; }
+      .item { border-color: #ddd; }
+    }
+
+    /* Small screens */
+    @media (max-width: 720px) {
+      .resume { margin: 0; border-radius: 0; padding: 28px 18px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .row { flex-direction: column; gap: 4px; }
+      .row .right { white-space: normal; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Spandan Nepal</h1>
-            <p>Arlington, Texas | <a href="mailto:spandan7nepal@gmail.com">spandan7nepal@gmail.com</a> | 682-373-2806 | <a href="#">spandan-nepal</a> | <a href="https://github.com/SpandanNepal">GitHub: SpandanNepal</a></p>
-        </header>
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Languages and Scripts:</strong> JavaScript, Python, GO, HTML, CSS</li>
-                <li><strong>Frameworks and Libraries:</strong> React, Angular, Go Buffalo, Redux, Bootstrap, SASS/SCSS</li>
-                <li><strong>Database:</strong> MySQL, MongoDB</li>
-                <li><strong>Collaboration:</strong> Slack, Google Space, Teams</li>
-                <li><strong>Interpersonal:</strong> Ownership, Teamwork, Mentoring, Communication</li>
-                <li><strong>Design:</strong> Figma</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Software Engineer</h3>
-                <p><em>Leapfrog Technology — Phil.US</em> <span>San Francisco (June 2021 – May 2023)</span></p>
-                <ul>
-                    <li>Write modular, reusable and excellent quality code, code reviews, and implementation of best practices.</li>
-                    <li>Completely responsible for requirement analysis, estimation, development, and testing of assigned tasks.</li>
-                    <li>Work collaboratively within the team to develop high-quality software solutions.</li>
-                    <li>Apply version control tools, project management tools, agile methodology, project-level technologies, and code review process.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Software Engineer Intern</h3>
-                <p><em>Leapfrog Technology</em> <span>Kathmandu (Dec 2020 – Feb 2021)</span></p>
-                <ul>
-                    <li>Learn the basics of user interface (UI) and user experience (UX) design.</li>
-                    <li>Work on frontend technologies such as HTML, CSS, JavaScript, and ReactJS.</li>
-                    <li>Develop RESTful APIs as needed.</li>
-                    <li>Create a complete full-stack application.</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <strong>Junk Management Solution</strong> <a href="https://github.com/SN/JMS">github.com/SN/JMS</a>
-                    <p>A user-friendly website that simplifies junk disposal by connecting users with nearby providers, managing requests, tracking service history, and streamlining communication for both users and waste management businesses.</p>
-                    <p><strong>Tools Used:</strong> React, NodeJS, Firebase, Tailwind</p>
-                </li>
-                <li>
-                    <strong>Weapon Surveillance</strong> <a href="https://github.com/SN/RWS">github.com/SN/RWS</a>
-                    <p>Developed a desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users.</p>
-                    <p><strong>Tools Used:</strong> C#, .NET, SQL, XML</p>
-                </li>
-                <li>
-                    <strong>Custom Operating System</strong>
-                    <p>Built a UNIX-style OS with a scheduler, file system, text editor, and calculator.</p>
-                    <p><strong>Tools Used:</strong> C</p>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>Anderson University</strong> <span>(August 2024 – May 2026)</span>
-                    <p>MS in Computer Science</p>
-                </li>
-                <li>
-                    <strong>Visvesvaraya Technological University</strong> <span>(August 2017 – May 2021)</span>
-                    <p>Bachelor in Computer Science & Engineering</p>
-                    <p>GPA: 8.88/10</p>
-                </li>
-            </ul>
-        </section>
-    </div>
+  <main class="resume" role="main" aria-label="Resume of Spandan Nepal">
+    <header>
+      <div>
+        <h1>Spandan Nepal</h1>
+        <div class="role">Software Engineer</div>
+      </div>
+      <div class="contact" aria-label="Contact information">
+        <span>Pittsburgh, PA</span>
+        <a href="tel:+16823732806">(682)373-2806</a>
+        <a href="mailto:spandan7nepal@gmail.com">spandan7nepal@gmail.com</a>
+        <a href="https://www.linkedin.com/in/spandan-nepal-06a6241a3/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        <a href="https://github.com/SpandanNepal" target="_blank" rel="noreferrer noopener">GitHub</a>
+      </div>
+    </header>
+
+    <section aria-labelledby="summary">
+      <h2 id="summary">Summary</h2>
+      <p>
+        Software Engineer with 5+ years of comprehensive experience in full-stack development, from design to deployment. Proficient in collaboration, communication, and leadership, consistently driving success in both team-based and independent settings.
+      </p>
+    </section>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills">Technical Skills and Capabilities</h2>
+      <div class="grid-2">
+        <div class="item">
+          <div class="row"><div class="left">Languages</div></div>
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">C++</span>
+            <span class="chip">Python</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row"><div class="left">Databases</div></div>
+          <div class="chips">
+            <span class="chip">Postgres</span>
+            <span class="chip">MongoDB</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row"><div class="left">Technologies</div></div>
+          <div class="chips">
+            <span class="chip">React.js</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Django</span>
+            <span class="chip">CSS/SCSS</span>
+            <span class="chip">ETL pipeline</span>
+            <span class="chip">Copilot</span>
+            <span class="chip">Codex</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="row"><div class="left">Familiar</div></div>
+          <div class="chips">
+            <span class="chip">Docker</span>
+            <span class="chip">AWS</span>
+            <span class="chip">CI/CD</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Unix/Linux</span>
+            <span class="chip">Distributed Systems</span>
+            <span class="chip">Mixpanel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Work Experience</h2>
+
+      <article class="item" aria-label="Software Engineer II – Leapfrog Technology">
+        <div class="row">
+          <div class="left">Software Engineer II — Leapfrog Technology</div>
+          <div class="right">06/2021 – 06/2024</div>
+        </div>
+        <div class="block subtle">Design and development for a US healthcare platform, focusing on scalable and maintainable architecture.</div>
+        <ul>
+          <li>Reduced technical debt by 15% by building modular, reusable components and implementing best practices.</li>
+          <li>Improved application performance through tree shaking, code splitting, lazy loading, and server-side rendering, significantly enhancing first contentful paint by 45%.</li>
+          <li>Designed scalable data pipelines on AWS to handle analytics-heavy workloads. Leveraged AWS services to optimize database queries and schema design, supporting real-time inference and reporting.</li>
+          <li>Revamped the client onboarding process by migrating from a React SPA to a server-side rendering framework, reducing initial load time from 6–7 seconds to 1–2 seconds and dramatically improving user experience.</li>
+          <li>Refactored the payment framework to enhance scalability and maintainability, while implementing customized integrations for clients.</li>
+          <li>Contributed to organizational growth by driving hiring initiatives, mentoring junior developers, and coordinating internship programs. Recognized internally as a “bar raiser” for consistently upholding engineering excellence.</li>
+        </ul>
+      </article>
+
+      <article class="item" aria-label="Software Engineer Intern – Leapfrog Technology">
+        <div class="row">
+          <div class="left">Software Engineer Intern — Leapfrog Technology</div>
+          <div class="right">12/2020 – 02/2021</div>
+        </div>
+        <ul>
+          <li>Refactored and modularized code in a legacy project, improving maintainability and aligning with modern best practices. Conducted ongoing research to discover and integrate new technologies, enhancing overall development efficiency.</li>
+          <li>Enhanced expertise in HTML5 and CSS3, including responsive design, Flexbox, CSS Grid, animations, and cross-browser compatibility.</li>
+          <li>Gained hands-on experience across the software development lifecycle, including version control, agile practices, and code reviews. Designed and built a full-stack to-do application using React, Node.js, and PostgreSQL, demonstrating end-to-end development skills.</li>
+          <li>Learned and applied unit testing to validate functionality and ensure code quality across various components.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="projects">
+      <h2 id="projects">Project Experience</h2>
+
+      <article class="item" aria-label="Customer Churn Prediction">
+        <div class="row">
+          <div class="left">Customer Churn Prediction</div>
+          <div class="right">01/2025 – 03/2025</div>
+        </div>
+        <ul>
+          <li>Built a basic machine learning model to predict customer churn using Python and Scikit-learn. Containerized model with Docker and deployed via Django API for real-time customer churn predictions.</li>
+          <li>Preprocessed and analyzed a sample dataset containing customer demographics, service usage, and support interactions. Achieved over 80% accuracy on test data. Deployed a simple Django-based interface to allow users to test predictions with custom inputs.</li>
+        </ul>
+      </article>
+
+      <article class="item" aria-label="Junk Solution">
+        <div class="row">
+          <div class="left">Junk Solution</div>
+          <div class="right">08/2024 – 12/2024</div>
+        </div>
+        <ul>
+          <li>Developed a web-based platform to streamline junk disposal by connecting users with nearby waste management providers. Implemented features for history tracking and service management to enhance coordination between users and businesses.</li>
+          <li>Integrated computer vision for image-based junk identification, allowing users to upload photos for automated categorization. Utilized WebSockets to enable real-time, persistent communication within the application.</li>
+        </ul>
+      </article>
+
+      <article class="item" aria-label="Realtime Weapon Surveillance">
+        <div class="row">
+          <div class="left">Realtime Weapon Surveillance</div>
+          <div class="right">08/2020 – 12/2020</div>
+        </div>
+        <ul>
+          <li>Developed a video surveillance system for high-end security, utilizing advanced weapon detection to alert authorities and mitigate risks to human safety. Applied transfer learning techniques to improve object detection accuracy and adapt the model to surveillance scenarios.</li>
+          <li>Led the team in implementing the system into a Django application. The video is processed through a transfer learning-based detection model, with results stored in Django's database and exposed via RESTful APIs for real-time monitoring and alerting.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="item">
+        <ul>
+          <li><strong>Master of Science, Computer Science</strong>, Anderson University, Anderson, SC — GPA: 3.8/4</li>
+          <li><strong>Bachelor of Engineering, Computer Science</strong>, Visvesvaraya Technological University, Bangalore — GPA: 8.88/10</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
